@@ -80,8 +80,8 @@ USER* create_user(int size, char name_temp[9]) {
 
 	newptr = (USER*)malloc(sizeof(USER));
 
-	newptr->num = (int*)malloc(sizeof(int));
-	newptr->bullet = (int*)malloc(sizeof(int));
+	newptr->num = (int)malloc(sizeof(int));
+	newptr->bullet = (int)malloc(sizeof(int));
 	newptr->name = (char*)malloc(sizeof(char)*strlen(name_temp) + 1);
 
 	if (newptr == NULL) {
