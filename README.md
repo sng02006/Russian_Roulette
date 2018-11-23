@@ -53,11 +53,11 @@ struct user를 typedef로 USER라고 정의합니다.
 #### create_user
 ---------------
 매개변수로 받은 size, name_temp를 USER type의 newptr에 저장해줍니다.
--malloc으로 동적 할당을 받습니다.
--USER type로 선언한 newptr->num에 size를 저장합니다.
--newptr->bullet에는 아직 사용자가 죽지 않았으므로 0을 저장합니다.
--strcpy를 사용해서 name_temp를 newptr->name에 복사합니다.
--newptr을 반환합니다.
+- malloc으로 동적 할당을 받습니다.
+- USER type로 선언한 newptr->num에 size를 저장합니다.
+- newptr->bullet에는 아직 사용자가 죽지 않았으므로 0을 저장합니다.
+- strcpy를 사용해서 name_temp를 newptr->name에 복사합니다.
+- newptr을 반환합니다.
 
 #### game_start
 --------------
