@@ -1,6 +1,6 @@
 # Russian_Roulette
 
-1. Introduction
+## Introduction
 ---------------
 >- student.txt file로부터 학생들의 이름을 입력받아 circular linked list인 user에 저장됩니다.
 >- 총알을 넣을 수 있는 공간이 사람 수만큼 있고, 사람이 죽으면 공간도 같이 감소합니다.
@@ -9,20 +9,19 @@
 >- 사람이 죽을 때마다 차례로 linked list인 dead에 저장됩니다.
 >- 게임 종료 후 죽은 순서와 이름, 몇 번째 총알에 죽었는지 한 번에 출력해줍니다.
 
-2. Execution result
+## Execution result
 -------------------
->
-![execution_result1](https://user-images.githubusercontent.com/44752186/48939284-0fbc6c00-ef57-11e8-9c50-bca1fbab5c75.jpg)
+>![execution_result1](https://user-images.githubusercontent.com/44752186/48939284-0fbc6c00-ef57-11e8-9c50-bca1fbab5c75.jpg)
 >첫 번째 게임을 예시로 가지고 왔습니다.
 >총알이 몇 번에 들어가있고, 누가 먼저 시작하는지 알려줍니다.
 >게임을 진행하다가 사망자가 나오면 그 게임을 종료하고 다음 게임을 진행합니다.
-![execution_result2](https://user-images.githubusercontent.com/44752186/48939294-1d71f180-ef57-11e8-9e46-a68abf1353c6.jpg)
+>![execution_result2](https://user-images.githubusercontent.com/44752186/48939294-1d71f180-ef57-11e8-9e46-a68abf1353c6.jpg)
 >게임이 종료되면 Dead Number에 따라 차례로 죽은 사람의 이름과 몇 번째 총알에 죽었는지 출력합니다.
 
-3. Code
+## Code
 -------
-##source file
-###main
+###source file
+####main
 argu       | type | 
 ---------- | :--: | ------------------------------------------------------
 size	   | int  | student.txt로부터 이름을 하나씩 불러올 때마다 +1이 됩니다.
@@ -36,8 +35,8 @@ create_user로 circular linked list인 user를 만듭니다.
 user를 매개변수로 game_start로 넘겨줘서 game_start에서 linked list인 dead를 반환받습니다.
 printlist를 이용해 두 번째 Execution result와 같이 출력해줍니다.
 
-##header file
-###struct
+###header file
+####struct
 struct user를 typedef로 USER라고 정의합니다.
 
 argu	 | type |
@@ -47,7 +46,7 @@ bullet	 | USER | 몇 번째 총알에 죽었는지 저장하는 변수입니다.
 name	 | USER | 사용자의 이름을 저장하는 변수입니다.
 next	 | USER | 다음 node를 가리키는 변수입니다.
 
-###create_user
+####create_user
 매개변수로 받은 size, name_temp를 USER type의 newptr에 저장해줍니다.
 -malloc으로 동적 할당을 받습니다.
 -USER type로 선언한 newptr->num에 size를 저장합니다.
@@ -55,7 +54,7 @@ next	 | USER | 다음 node를 가리키는 변수입니다.
 -strcpy를 사용해서 name_temp를 newptr->name에 복사합니다.
 -newptr을 반환합니다.
 
-###game_start
+####game_start
 매개변수로 size를 number_of_user로 전달받고, user를 전달받아 사람이 모두 죽을 때까지 게임을 진행합니다.
 
 argu	 | type |
@@ -76,7 +75,7 @@ dead	 | USER | 죽은 사람들의 정보를 포함하고있는 linked list입�
 - 남은 사람으로 다시 bullet과 revolver, first를 설정하고, 게임을 진행합니다.
 - 남은 사람이 없으면 dead를 반환합니다.
 
-###dead_user
+####dead_user
 매개변수로 dead_num, dead, game_start의 temp->num인 i와 user를 전달받습니다.
 user에서 죽은 사람의 정보를 del에 저장하고 del과 user의 연결을 끊습니다.
 그리고 del을 dead 끝에 추가합니다.
@@ -90,6 +89,6 @@ temp	 | USER | user 대신 움직이면서 정보를 읽어올 때 사용하는 
 - 없앨 원소의 num에 dead_num을 저장하고 이후 원소의 num을 1씩 감소시킵니다.
 - del을 dead에 추가해주고 dead를 반환합니다.
 
-###printlist
+####printlist
 매개변수로 입력받은 linked list를 차례로 출력해주는 함수입니다.
 
