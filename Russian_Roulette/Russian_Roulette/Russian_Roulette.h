@@ -112,13 +112,15 @@ USER* dead_user(int dead_num, USER* dead, int i, USER* user) {
 
 		user = temp = user->next;
 
-		while (temp->next != del) {
+		if (user != user->next) {
+			while (temp->next != del) {
+				temp->num -= 1;
+				temp = temp->next;
+			}
 			temp->num -= 1;
-			temp = temp->next;
-		}
-		temp->num -= 1;
 
-		temp->next = user;
+			temp->next = user;
+		}
 	}
 	else {
 		temp = user;
