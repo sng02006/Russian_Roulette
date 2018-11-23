@@ -9,7 +9,7 @@ typedef struct user {
 }USER;
 
 USER* game_start(int number_of_user, USER* user);
-USER* create_user(int size, char name_temp[9], USER *user);
+USER* create_user(int size, char name_temp[9]);
 USER* dead_user(int dead_num, USER* dead, int i, USER* user);
 void printlist(USER* user);
 
@@ -75,7 +75,7 @@ USER* game_start(int number_of_user, USER* user) {
 }
 
 //동적 할당 받아 node 하나를 만들고 입력받은 정보를 저장하는 함수
-USER* create_user(int size, char name_temp[9], USER *user) {
+USER* create_user(int size, char name_temp[9]) {
 	USER *newptr = NULL;
 
 	newptr = (USER*)malloc(sizeof(USER));

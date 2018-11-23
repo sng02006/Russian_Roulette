@@ -21,11 +21,11 @@ int main() {
 	while (fscanf(fp, "%s", name_temp) != EOF) {
 		size++;
 		if (user == NULL) {
-			new_user = create_user(size, name_temp, user);
+			new_user = create_user(size, name_temp);
 			user = temp = new_user;
 		}
 		else {
-			new_user = create_user(size, name_temp, user);
+			new_user = create_user(size, name_temp);
 			temp->next = new_user;
 			new_user->next = user;
 			temp = temp->next;
